@@ -1,0 +1,27 @@
+{
+  "name": "pw-js-framework",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "pretest": "rimraf report/ & rimraf allure-report/",
+    "test": "npx playwright test --headed --project=GoogleChrome",
+    "test:headed": "yarn pretest & npx playwright test --headed",
+    "test:chrome": "yarn pretest &  npx playwright test --headed --project=GoogleChrome",
+    "test:edge": "yarn pretest & npx playwright test --headed --project=MicrosoftEdge",
+    "test:e2e": "yarn pretest & npx playwright test --grep @e2e --project=GoogleChrome",
+    "test:smoke": "yarn pretest & npx playwright test --grep @smoke",
+    "report": "allure generate report/allure -o allure-report --clean & allure open"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.45.0",
+    "@types/node": "^20.14.9",
+    "allure-commandline": "^2.29.0",
+    "allure-playwright": "^2.15.1",
+    "dotenv": "^16.4.5",
+    "eslint": "^9.6.0",
+    "moment": "2.29.4",
+    "moment-timezone": "0.5.34",
+    "rimraf": "^5.0.7"
+  }
+}
