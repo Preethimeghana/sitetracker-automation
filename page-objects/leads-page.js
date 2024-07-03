@@ -126,8 +126,8 @@ class LeadsPage extends BasePage {
     await this.myLeadDropdownIcon.click();
   }
 
-  async verifyTimePeriodFilter() {
-    await expect(this.createdDate).toHaveText('Jan 1, 2024 - Jun 30, 2024');
+  async verifyTimePeriodFilter(todayDate) {
+    await expect(this.createdDate).toHaveText(`Jan 1, 2024 - ${todayDate}`);
   }
 
   async selectBettyBairUnderLeadDropdown() {

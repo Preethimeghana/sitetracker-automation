@@ -1,5 +1,5 @@
 {
-  "name": "pw-js-framework",
+  "name": "sitetracker-automation-framework",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -9,8 +9,8 @@
     "test:headed": "yarn pretest & npx playwright test --headed",
     "test:chrome": "yarn pretest &  npx playwright test --headed --project=GoogleChrome",
     "test:edge": "yarn pretest & npx playwright test --headed --project=MicrosoftEdge",
-    "test:e2e": "yarn pretest & npx playwright test --grep @e2e --project=GoogleChrome",
-    "test:smoke": "yarn pretest & npx playwright test --grep @smoke",
+    "test:e2e": "yarn pretest & npx playwright test --grep @e2e --project=GoogleChrome --headed",
+    "test:smoke": "yarn pretest & npx playwright test --grep @smoke --headed --project=GoogleChrome",
     "report": "allure generate report/allure -o allure-report --clean & allure open"
   },
   "devDependencies": {
